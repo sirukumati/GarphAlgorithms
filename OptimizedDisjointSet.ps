@@ -14,13 +14,14 @@ class UnionFind:
 		rootX = self.find[x]
 		rootY = self.find[y]
 		if rootX != rootY:
-			if self.rank[rootX] > self.rank[rootY]:
-				self.root[rootY] = rootX
-			elif self.rank[rootX] < self.rank[rootY]:
-				self.root[rootX] = rootY
-			else:
-			     self.root[rootY] = rootX
-			     self.rank[rootX] += 1
+			 if self.rank[rootX] > self.rank[rootY]:
+                	self.root[rootY] = rootX
+            	elif self.rank[rootX] < self.rank[rootY]:
+                	self.root[rootX] = rootY
+           	 else:
+               	 	self.root[rootY] = rootX
+                	self.rank[rootX] += 1
+
 	
 	def connected(self,x,y):
 		return self.find[x] == self.find[y]
